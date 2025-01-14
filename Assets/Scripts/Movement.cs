@@ -35,52 +35,81 @@ public class Movement : MonoBehaviour
         ProcessRotation();
     }
 
+    #region Rotação Foguete
     private void ProcessRotation()
     {
         float rotationInput = rotation.ReadValue<float>();
 
         transform.Rotate(Vector3.forward * -rotationInput * rotationStrength * Time.fixedDeltaTime);
 
-        if (rotationInput == 0)
-            rb.freezeRotation = false;
-        else
-            rb.freezeRotation = true;
+        ToggleFreezeConstraints(rotationInput);
+        RotationParticleHandler(rotationInput);
 
+    }
+
+    private void RotationParticleHandler(float rotationInput)
+    {
         if (rotationInput > 0)
         {
             if (!leftBooster.isPlaying)
+            {
+                rightBooster.Stop();
                 leftBooster.Play();
+            }
         }
         else if (rotationInput < 0)
         {
             if (!rightBooster.isPlaying)
+            {
+                leftBooster.Stop();
                 rightBooster.Play();
+            }
         }
         else
         {
             leftBooster.Stop();
             rightBooster.Stop();
         }
-
     }
 
+    private void ToggleFreezeConstraints(float rotationInput)
+    {
+        if (rotationInput == 0)
+            rb.freezeRotation = false;
+        else
+            rb.freezeRotation = true;
+    }
+    #endregion
+
+    #region Aceleração foguete
     private void ProcessThrust()
     {
         if (thrust.IsPressed())
         {
-            rb.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
-
-            if (!mainBooster.isPlaying)
-                mainBooster.Play();
+            StartThrusting();
         }
         else
         {
-            audioSource.Stop();
-            mainBooster.Stop();
+            StopThrusting();
         }
     }
+
+    private void StopThrusting()
+    {
+        audioSource.Stop();
+        mainBooster.Stop();
+    }
+
+    private void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+
+        if (!mainBooster.isPlaying)
+            mainBooster.Play();
+    }
+    #endregion
 }
