@@ -433,7 +433,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 1634b9f562494428cb24f4c0ce03b894, type: 3}
   m_Resource: {fileID: 8300000, guid: 1634b9f562494428cb24f4c0ce03b894, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -517,6 +517,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &780105287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780105281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073dd55fb59ee43089819733c5d68581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +697,10 @@ PrefabInstance:
     - target: {fileID: 5048045048277068938, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
       propertyPath: m_Name
       value: Launch Pad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048045048277068938, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 5568017684337604144, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -909,6 +925,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2644584845023888419, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 780105286}
+    - targetCorrespondingSourceObject: {fileID: 2644584845023888419, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 780105287}
   m_SourcePrefab: {fileID: 100100000, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
 --- !u!1001 &4729070679064804053
 PrefabInstance:
@@ -921,6 +940,10 @@ PrefabInstance:
     - target: {fileID: 5048045048277068938, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
       propertyPath: m_Name
       value: Launch Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048045048277068938, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
       objectReference: {fileID: 0}
     - target: {fileID: 5568017684337604144, guid: c561436fe498d4b0298016d924a0b18f, type: 3}
       propertyPath: m_LocalPosition.x
