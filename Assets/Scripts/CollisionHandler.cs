@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float levelLoadDelay = 2f;
+
     private void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -11,12 +14,26 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("This thing is friendly");
                 break;
             case "Finish":
-                LoadNextLevel();
+                LevelComplete();
                 break;
             default:
-                ReloadLevel();
+                StartCrashSequence();
                 break;
         }
+    }
+
+    private void LevelComplete()
+    {
+        // TODO add sfx and particle effect
+        GetComponent<Movement>().enabled = false;
+        Invoke(nameof(LoadNextLevel), levelLoadDelay);
+    }
+
+    private void StartCrashSequence()
+    {
+        //TODO add sfx and particles
+        GetComponent<Movement>().enabled = false;
+        Invoke(nameof(ReloadLevel), levelLoadDelay);
     }
 
     void ReloadLevel()

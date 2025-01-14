@@ -35,6 +35,12 @@ public class Movement : MonoBehaviour
         float rotationInput = rotation.ReadValue<float>();
 
         transform.Rotate(Vector3.forward * -rotationInput * rotationStrength * Time.fixedDeltaTime);
+
+        if (rotationInput == 0)
+            rb.freezeRotation = false;
+        else
+            rb.freezeRotation = true;
+
     }
 
     private void ProcessThrust()
