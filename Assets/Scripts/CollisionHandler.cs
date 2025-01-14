@@ -40,7 +40,6 @@ public class CollisionHandler : MonoBehaviour
 
     private void LevelComplete()
     {
-
         successParticles.Play();
         isControllable = false;
         audioSource.Stop();
