@@ -125,6 +125,7 @@ MonoBehaviour:
     m_Flags: 0
   thrustStrength: 1000
   rotationStrength: 100
+  mainEngine: {fileID: 8300000, guid: 1634b9f562494428cb24f4c0ce03b894, type: 3}
 --- !u!54 &8765932117196945640
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -282,6 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073dd55fb59ee43089819733c5d68581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 2
+  crash: {fileID: 8300000, guid: 22e0400f340a34d998e8451c34e15995, type: 3}
+  success: {fileID: 8300000, guid: 68f3231d3f2364f52831f2d3ec5dd6c9, type: 3}
 --- !u!1001 &3803377885737933160
 PrefabInstance:
   m_ObjectHideFlags: 0
