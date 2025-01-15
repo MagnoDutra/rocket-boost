@@ -1621,17 +1621,17 @@ MonoBehaviour:
   CameraDistance: 17
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0.00000021606684, y: 0.12}
+    ScreenPosition: {x: 0.00000039860606, y: 0.11999998}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.13492824, y: 0.2}
+      Size: {x: 0.09534492, y: 0.2}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.39043015, y: 0.45646256}
+      Size: {x: 0.19876367, y: 0.37498087}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  Damping: {x: 0.5, y: 0.5, z: 0.5}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -1910,6 +1910,14 @@ PrefabInstance:
     - target: {fileID: 2644584845023888419, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
       propertyPath: m_Name
       value: PlayerRocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318072134344824376, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
+      propertyPath: thrustStrength
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318072134344824376, guid: 3aafad243c49a4e56b16731f4b1e69f7, type: 3}
+      propertyPath: rotationStrength
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
